@@ -29,7 +29,7 @@ class Library {
     if (this.books.length === 0) {
       console.log('No books in the library.'); // Inform if no books are present
     } else {
-      this.books.forEach(book => console.log(book.getDetails())); // List all books
+      this.books.forEach(book => book.getDetails()); // List all books
     }
   }
 }
