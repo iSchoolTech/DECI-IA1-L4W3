@@ -9,12 +9,16 @@ class Library {
 
   addBook(book) {
     this.books.push(book); // Add a new book to the library
+    console.log(`${book.title} by ${book.author} has been added to the library!`);
   }
 
   removeBook(title) {
     const index = this.books.findIndex(book => book.title === title); // Find the book by title
     if (index !== -1) {
-      const removedBook = this.books.splice(index, 1); // Remove the book from the array
+      const removedBook = this.books.splice(index, 1)[0]; // Remove the book from the array
+      console.log(`Removed: ${removedBook.getDetails()}`);
+    } else {
+      console.log(`Can't find a book with the title: ${title} to remove`);
     }
   }
 
@@ -22,6 +26,8 @@ class Library {
     const book = this.books.find(book => book.title === title); // Search for a book by title
     if (book) {
       console.log(`Found: ${book.getDetails()}`); // If found, show details
+    } else {
+      console.log(`No book found with the title: ${title}`);
     }
   }
 
