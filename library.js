@@ -1,7 +1,5 @@
 // Task: Create a Library class and manage a collection of books
 
-
-
 class Library {
   constructor() {
     this.books = []; // Array to hold all book objects
